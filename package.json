@@ -17,7 +17,8 @@
     "cy:run:with:report": "(npm run cy:run || true) && npm run report:open",
     "cy:dashboard": "npx cypress run --browser chrome  --record --key 3bee7457-5802-41cf-b9ea-03e04da28a5f",
     "allure:clear": "rm -r allure-results/ allure-report cypress/screenshots || true",
-    "allure:history": "mv -f allure-report/history allure-results/history && rm -r allure-report || true"
+    "allure:history": "mv -f allure-report/history allure-results/history && rm -r allure-report || true",
+    "test": "cypress run"
   },
   "author": "",
   "license": "ISC",
