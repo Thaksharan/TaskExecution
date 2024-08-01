@@ -1,0 +1,39 @@
+{
+  "name": "wurthautomation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "cy:open": "npx cypress open",
+    "cy:run:chrome:headed": "npx cypress run --browser chrome --headed",
+    "cy:run:chrome:headless": "npx cypress run --browser chrome --headless",
+    "cy:run:chrome:headed:allure": "cypress run --browser chrome --headed --env allure=true",
+    "cy:run:chrome:headless:allure:all": "cypress run --browser chrome --headless --env allure=true --config excludeSpecPattern='cypress/e2e/SearchTests/*.cy.js'",
+    "cy:run:chrome:headless:allure:regression": "cypress run --browser chrome --headless --env allure=true --config excludeSpecPattern='cypress/e2e/SearchTests/*.cy.js'",
+    "cy:run:chrome:headless:allure:search": "cypress run --browser chrome --headless --env allure=true --spec 'cypress/e2e/SearchTests/*.cy.js'",
+    "allure:report:generate:open": "allure generate allure-results --clean -o allure-report && allure open allure-report",
+    "report:open": "allure serve",
+    "report:generate": "allure generate",
+    "cy:run:with:report": "(npm run cy:run || true) && npm run report:open",
+    "cy:dashboard": "npx cypress run --browser chrome  --record --key 3bee7457-5802-41cf-b9ea-03e04da28a5f",
+    "allure:clear": "rm -r allure-results/ allure-report cypress/screenshots || true",
+    "allure:history": "mv -f allure-report/history allure-results/history && rm -r allure-report || true"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@cypress/xpath": "^2.0.3",
+    "@mmisty/cypress-allure-adapter": "^0.11.0",
+    "cy-verify-downloads": "^0.1.14",
+    "cypress": "^13.7.1",
+    "cypress-iframe": "^1.0.1",
+    "cypress-mochawesome-reporter": "^3.6.0",
+    "cypress-pipe": "^2.0.0",
+    "cypress-wait-for-stable-dom": "^0.1.0"
+  },
+  "dependencies": {
+    "cypress-downloadfile": "^1.2.3",
+    "cypress-plugin-steps": "^1.1.1",
+    "cypress-real-events": "^1.10.3"
+  }
+}
