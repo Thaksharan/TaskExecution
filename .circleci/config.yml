@@ -4,6 +4,8 @@ jobs:
   build:
     docker:
       - image: circleci/node:latest
+    parallelism: 4
+    resource_class: large
     steps:
       - checkout
 
@@ -49,8 +51,9 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       - run:
-          name: Run Tests
-          command: npm test
+          name: Run Cypress Tests
+          command: |
+            npx cypress run --record --parallel --ci-build-id $CIRCLE_BUILD_NUM
 
 workflows:
   version: 2
