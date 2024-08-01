@@ -7,13 +7,19 @@ jobs:
     steps:
       - checkout
 
+      - run:
+          name: Install Dependencies
+          command: |
+            sudo apt-get update
+            sudo apt-get install -y libnss3 xvfb
+
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "package.json" }}
             - v1-dependencies-
 
       - run:
-          name: Install Dependencies
+          name: Install Node Modules
           command: npm install
 
       - run:
