@@ -4,12 +4,28 @@ jobs:
   build:
     docker:
       - image: circleci/node:latest
-    parallelism: 4
     steps:
       - checkout
+
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            - v1-dependencies-
+
       - run:
           name: Install Dependencies
           command: npm install
+
+      - run:
+          name: Install Cypress
+          command: npx cypress install
+
+      - save_cache:
+          paths:
+            - node_modules
+            - ~/.cache/Cypress
+          key: v1-dependencies-{{ checksum "package.json" }}
+
       - run:
           name: Run Tests
           command: npm test
