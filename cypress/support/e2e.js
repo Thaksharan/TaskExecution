@@ -19,13 +19,7 @@
 // Import commands.js using ES2015 syntax:
 import './commands'
 import './navigation_commands'
-import './components_commands/dialogShippingAddress_commands.js'
-import './components_commands/dialogItemAddedToCart_commands.js'
-import './components_commands/dialogQuickOrder_commands.js'
-import './components_commands/dialogAccount&ShippingAddress_commands.js'
 import './components_commands/dialogSignIn_commands.js'
-import './components_commands/dialogCountrySelector_commands.js'
-import './search_commands.js'
 import './selectors.js'
 
 // Alternatively you can use CommonJS syntax:

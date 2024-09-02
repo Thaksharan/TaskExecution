@@ -8,28 +8,11 @@ const { registerCommand } = require('cypress-wait-for-stable-dom')
 
 module.exports = defineConfig({
   env: {
-   // url: 'https://wurthlac.com/',
-   // url: 'https://webqa.wurthlac.com/',
-   // url: 'https://webstg.wurthlac.com',
-    allureCleanResults: true,
-    allureResults: 'allure-results',
-    //set user details that suite will run
-    username: 'thilina.manawadu@villvay.com',
-    password:'Testtest1!',
-    firstName: "Test",
-    profile_permission: "ADMIN",
-    profile_status: "ACTIVE",
-    fixtureFolder:"prod"
+    // allureCleanResults: true,
+    // allureResults: 'allure-results',
+    username: 'thaksharan564@gmail.com',
+    password:'Wurth@2024'
   },
-  // reporter:'cypress-mochawesome-reporter',
-  // reporterOptions: {
-  //   reportDir: 'cypress/reports',
-  //   charts: true,
-  //   reportPageTitle: 'custom-title',
-  //   embeddedScreenshots: true,
-  //   inlineAssets: false,
-  //   saveAllAttempts: false,
-  // },
   screenshotOnRunFailure: true,
   video: true,
   pageLoadTimeout: 120000,
@@ -53,7 +36,7 @@ module.exports = defineConfig({
 
     },
 
-    baseUrl:'https://wurthlac.com',
+    baseUrl:'https://www.singersl.com/',
     specPattern: 'cypress/e2e/**/*.cy.js',
   },
 });
