@@ -16,43 +16,21 @@
 ///<reference types="Cypress"/>
 ///<reference types="cypress-iframe" />
 /// <reference types="cypress-wait-for-stable-dom" />
-// Import commands.js using ES2015 syntax:
-import './commands'
-import './navigation_commands'
-import './components_commands/dialogSignIn_commands.js'
-import './selectors.js'
 
-// Alternatively you can use CommonJS syntax:
-// require('./commands')
+import './commands'
+import './selectors.js'
 
 require('@cypress/xpath');
 
-//import 'cypress-mochawesome-reporter/register';
-//import '@shelex/cypress-allure-plugin';
 import '@mmisty/cypress-allure-adapter/support';
 import "cypress-real-events/support";
 import 'cypress-plugin-steps'
 import 'cypress-iframe'
 
 Cypress.on('uncaught:exception', (err, runnable) => {
-    // returning false here prevents Cypress from
-    // failing the test
+
     return false
   })
-
-// //display the generated videos and screenshots in the mocha result.
-// import addContext from 'mochawesome/addContext';
-
-// //add screenshots to mochaawesome report
-// const titleToFileName = (title) => title.replace(/[:\/]/g, '');
-
-// Cypress.on('test:after:run', (test, runnable) => {
-//     if (test.state === 'failed') {
-//         const filename = `${titleToFileName(runnable.parent.title)} -- ${titleToFileName(test.title)} (failed).png`;
-//         addContext({ test }, `../screenshots/${Cypress.spec.name}/${filename}`);
-//         //addContext({ test }, `../videos/${Cypress.spec.name}.mp4`);
-//     }
-// });
 
 before(function () {
     // disable Cypress's default behavior of logging all XMLHttpRequests and fetches to the Command Log

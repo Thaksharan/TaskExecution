@@ -11,13 +11,13 @@ describe('Home Tests', () => {
         cy.verifySiteLoaded()
     })
     
-    it('WLC-TC-387 Verify Home Page', () => {
+    it('Practical Task', () => {
 
-        cy.step('verify user name')
-        
+        cy.step('Go inside a Product Page and Add to Cart')
+        homepage.addingProductToCart()
+        homepage.verifyShippingAddressSection()
+        homepage.verifyPaymentSection()
         
     })
 
 })
-
-
